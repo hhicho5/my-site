@@ -45,9 +45,8 @@ export default async function CausalityPage() {
       </h1>
       {/* TODO(yours): one sentence, your words, on what this service does. */}
       <p className="mt-4 max-w-prose text-muted">
-        My auditor reads a dataset and the story behind it, decides which causal structure
-        produced the data, and says whether the pattern is a cause or a coincidence. Every number
-        on this page comes from the same saved answer my API gave.
+      This page checks whether a pattern in business data is a real cause or a coincidence. 
+      It reads the data and the story behind it, names the causal structure, and says whether to split the data by the third variable.
       </p>
 
       <section className="mt-10">
@@ -97,9 +96,8 @@ export default async function CausalityPage() {
             comparison shows, and why the story about the third variable
             decides which row to trust (Stations 4.4 and 4.5). */}
         <p className="mt-3 max-w-prose text-muted">
-          The top row compares the two groups over all the data. The rows below compare them
-          within each level of {String(ctx.zLabel)}. Which row to trust depends on the story about{" "}
-          {String(ctx.zLabel)}, not on which gap is bigger.
+        The top row compares the two groups across all the data. The rows below compare them inside each level of the third variable. 
+        The story behind the third variable decides which row to trust.
         </p>
       </section>
 
@@ -114,9 +112,9 @@ export default async function CausalityPage() {
         {/* TODO(yours): one sentence connecting the picture to the verdict:
             which arrow (or missing arrow) makes it causal or not. */}
         <p className="mt-3 max-w-prose text-muted">
-          {answer.causal
-            ? `Changing ${ctx.xLabel} changes ${ctx.yLabel}: an arrow runs from ${ctx.xLabel} to ${ctx.yLabel}, directly or through ${ctx.zLabel}.`
-            : `The gap between the ${ctx.xLabel} groups does not come from an arrow from ${ctx.xLabel} to ${ctx.yLabel}. It comes from ${ctx.zLabel}.`}
+        The arrows show how the choice, the third variable, and the outcome are linked.
+         If they lead from the choice to the outcome, the verdict is causal.
+
         </p>
       </section>
     </main>
